@@ -107,6 +107,10 @@ NeoVim 网站：[https://neovim.io/](https://neovim.io/)
 
 有时可能缺少 python3_dev，按照提示安装即可
 
+```bash
+sudo apt install python3.10-venv
+```
+
 ![Untitled](IMAGE/Untitled%201.png)
 
 使用命令:Mason 安装对应语言服务
