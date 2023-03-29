@@ -1,18 +1,19 @@
 # 基于 Ubuntu 22.04 的命令行开发环境
 
 <aside>
-💡 本文配置基于[ZyWCN1998/MyDevEnvFile](https://github.com/ZyWCN1998/MyDevEnvFile)仓库修改而来,如果你觉得有帮助，请给他点赞
+💡 本文配置基于[ZyWCN1998/MyDevEnvFile](https://github.com/ZyWCN1998/MyDevEnvFile) 仓库修改而来,如果你觉得有帮助，请给他点赞
 </aside>
 
 ![Untitled](IMAGE/Untitled.png)
 
-在ZyWCN1998的基础上：
-1. .zshrc中plugins加入fd，以通过报错
-2. 删掉了.zshrc末尾的“e”字符+大佬自己的一生一芯环境变量
-3. 将nvim文件夹中的zhiyuanwu改称了我自己的用户名，将nvim/init.lua中的路径一并修改
-4. 将nvim/lua/aemaeth/core/options.lua中的opt.tabstop&shiftwidth修改成了自己习惯的4
-5. 将nvim/lua/aemaeth/plugins/lsp/lspconfig.lua中164行sumneko_lua修改为lua_ls，好像是server那边改名字了
-6. 同上将nvim/lua/aemaeth/plugins/lsp/mason.lua中的29行sumneko_lua修改为lua_ls
+在 ZyWCN1998 的基础上：
+
+1. .zshrc 中 plugins 加入 fd，以通过报错
+2. 删掉了.zshrc 末尾的“e”字符+大佬自己的一生一芯环境变量
+3. 将 nvim 文件夹中的 zhiyuanwu 改称了我自己的用户名，将 nvim/init.lua 中的路径一并修改
+4. 将 nvim/lua/aemaeth/core/options.lua 中的 opt.tabstop&shiftwidth 修改成了自己习惯的 4
+5. 将 nvim/lua/aemaeth/plugins/lsp/lspconfig.lua 中 164 行 sumneko_lua 修改为 lua_ls，好像是 server 那边改名字了
+6. 同上将 nvim/lua/aemaeth/plugins/lsp/mason.lua 中的 29 行 sumneko_lua 修改为 lua_ls
 
 # 1. 安装
 
@@ -36,13 +37,15 @@
       printf "\n";
   }'
   ```
-- **Nerdfont:** [Nerd Fonts - Iconic font aggregator, glyphs/icons collection, & fonts patcher](https://www.nerdfonts.com/)
+- **Nerdfont:** [Nerd Fonts - Iconic font aggregator, glyphs/icons collection, & fonts patcher](https://www.nerdfonts.com/)  
   推荐使用 mesloLGF Nerdfonts
+
   ```bash
   sudo mv Meslo /usr/share/fonts/
   sudo fc-cache -fv
   ```
-  打开Terminal-Preferences-Profiles-Text-Custom font，选择MesloLGS Nerd Font
+
+  打开 Terminal-Preferences-Profiles-Text-Custom font，选择 MesloLGS Nerd Font
 
 - **Ripgrep:** https://github.com/BurntSushi/ripgrep
   ```bash
@@ -73,7 +76,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 将本仓库中.zshrc 文件放置于~目录下即可
 
 ### 安装 powerlevel10k 主题
+
 [powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
+
 ```bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 #chinese gitee
@@ -95,13 +100,14 @@ NeoVim 网站：[https://neovim.io/](https://neovim.io/)
 2. Install the package using sudo apt install ./nvim-linux64.deb
 3. Run nvim
 ```
-有时可能缺少python3_dev，按照提示安装即可
 
 ### 使用配置文件
 
 在\~目录下新建.config 文件夹，如果有的话则不需要新建，将本仓库中的 nvim 文件夹放置于\~ /.config 目录下即可。
 
 启动 nvim，使用命令:PackerSync 更新插件
+
+有时可能缺少 python3_dev，按照提示安装即可
 
 ![Untitled](IMAGE/Untitled%201.png)
 
