@@ -1,17 +1,18 @@
 # 基于 Ubuntu 22.04 的命令行开发环境
 
 <aside>
-💡 本文配置基于josean-dev/dev-environment-files仓库修改而来，如果你觉得有帮助，请给他点赞
-
+💡 本文配置基于[ZyWCN1998/MyDevEnvFile](https://github.com/ZyWCN1998/MyDevEnvFile)仓库修改而来,如果你觉得有帮助，请给他点赞
 </aside>
-
-> josean 的仓库：https://github.com/josean-dev/dev-environment-files
-
-> josean 的 YouTube 频道：[https://www.youtube.com/@joseanmartinez](https://www.youtube.com/@joseanmartinez)
 
 ![Untitled](IMAGE/Untitled.png)
 
-本仓库中为本人命令行开发环境搭建的配置文件，主要在 josean 仓库的基础上增加了对 Python，C，Cpp，Verilog 和 SystemVerilog 的支持。
+在ZyWCN1998的基础上：
+1. .zshrc中plugins加入fd，以通过报错
+2. 删掉了.zshrc末尾的“e”字符+大佬自己的一生一芯环境变量
+3. 将nvim文件夹中的zhiyuanwu改称了我自己的用户名，将nvim/init.lua中的路径一并修改
+4. 将nvim/lua/aemaeth/core/options.lua中的opt.tabstop&shiftwidth修改成了自己习惯的4
+5. 将nvim/lua/aemaeth/plugins/lsp/lspconfig.lua中164行sumneko_lua修改为lua_ls，好像是server那边改名字了
+6. 同上将nvim/lua/aemaeth/plugins/lsp/mason.lua中的29行sumneko_lua修改为lua_ls
 
 # 1. 安装
 
@@ -36,9 +37,16 @@
   }'
   ```
 - **Nerdfont:** [Nerd Fonts - Iconic font aggregator, glyphs/icons collection, & fonts patcher](https://www.nerdfonts.com/)
+  推荐使用 mesloLGF Nerdfonts
+  ```bash
+  sudo mv Meslo /usr/share/fonts/
+  sudo fc-cache -fv
+  ```
+  打开Terminal-Preferences-Profiles-Text-Custom font，选择MesloLGS Nerd Font
+
 - **Ripgrep:** https://github.com/BurntSushi/ripgrep
   ```bash
-  sudo apt-get install ripgrep
+  sudo apt install ripgrep
   ```
 - **Tree-sitter CLI:** https://github.com/tree-sitter/tree-sitter-cli
   ```bash
@@ -51,7 +59,7 @@
 ### 安装 zsh
 
 ```bash
-sudo apt-get install zsh
+sudo apt install zsh
 ```
 
 ### 安装 ohmyzsh
@@ -63,6 +71,14 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```
 
 将本仓库中.zshrc 文件放置于~目录下即可
+
+### 安装 powerlevel10k 主题
+[powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
+```bash
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+#chinese gitee
+git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
 
 ## 1.3 NeoVim 配置
 
@@ -79,6 +95,7 @@ NeoVim 网站：[https://neovim.io/](https://neovim.io/)
 2. Install the package using sudo apt install ./nvim-linux64.deb
 3. Run nvim
 ```
+有时可能缺少python3_dev，按照提示安装即可
 
 ### 使用配置文件
 
@@ -99,7 +116,7 @@ NeoVim 网站：[https://neovim.io/](https://neovim.io/)
 网站：[Home · tmux/tmux Wiki (github.com)](https://github.com/tmux/tmux/wiki)
 
 ```bash
-sudo apt-get install tmux
+sudo apt install tmux
 ```
 
 ### 使用配置文件
