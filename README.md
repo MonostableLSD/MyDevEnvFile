@@ -4,8 +4,6 @@
 💡 本文配置基于[ZyWCN1998/MyDevEnvFile](https://github.com/ZyWCN1998/MyDevEnvFile) 仓库修改而来,如果你觉得有帮助，请给他点赞
 </aside>
 
-![Untitled](IMAGE/Untitled.png)
-
 在 ZyWCN1998 的基础上：
 
 1. .zshrc 中 plugins 加入 fd，以通过报错
@@ -14,6 +12,8 @@
 4. 将 nvim/lua/aemaeth/core/options.lua 中的 opt.tabstop&shiftwidth 修改成了自己习惯的 4
 5. 将 nvim/lua/aemaeth/plugins/lsp/lspconfig.lua 中 164 行 sumneko_lua 修改为 lua_ls，好像是 server 那边改名字了
 6. 同上将 nvim/lua/aemaeth/plugins/lsp/mason.lua 中的 29 行 sumneko_lua 修改为 lua_ls
+
+![Untitled](IMAGE/Untitled.png)
 
 # 1. 安装
 
