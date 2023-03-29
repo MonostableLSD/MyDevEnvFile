@@ -1,8 +1,6 @@
 # 基于 Ubuntu 22.04 的命令行开发环境
 
-<aside>
 💡 本文配置基于[ZyWCN1998/MyDevEnvFile](https://github.com/ZyWCN1998/MyDevEnvFile) 仓库修改而来,如果你觉得有帮助，请给他点赞
-</aside>
 
 在 ZyWCN1998 的基础上：
 
